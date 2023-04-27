@@ -8,7 +8,7 @@ def showdrinks(request):
     #return data in Json Format
     all_drinks = Drinks.objects.all()
     serializer = DrinkSerializer(all_drinks, many=True)
-    return JsonResponse(serializer.data, safe=False)
+    return JsonResponse({'drinks': serializer.data}, safe=False)
 
 
 
